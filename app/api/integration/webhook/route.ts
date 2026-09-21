@@ -1,5 +1,12 @@
 import { NextResponse } from "next/server";
 
+export async function GET() {
+  return NextResponse.json({
+    success: true,
+    message: "Webhook endpoint is available. Use POST to send webhook events."
+  });
+}
+
 export async function POST(req: Request) {
   const secret = req.headers.get("X-Webhook-Secret");
 
